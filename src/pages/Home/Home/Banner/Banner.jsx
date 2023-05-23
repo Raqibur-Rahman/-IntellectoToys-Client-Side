@@ -9,7 +9,7 @@ const Banner = () => {
                 <div id="slide1" className="carousel-item relative w-full">
                     <img src={picture1} className="w-full rounded-lg" />
                     <div className="absolute h-full flex items-center justify-between   bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
-                        <div className='lg:space-y-7 lg:w-1/3 p-1'>
+                        <div className='lg:space-y-7 lg:w-1/3 p-1 pl-12'>
                             <h3 className='lg:text-3xl text-pink-700 font-bold lg:m-1 lg:p-1'>
                                 Ignite Curiosity, Fuel Learning.
                             </h3>
@@ -30,7 +30,7 @@ const Banner = () => {
                     <img src={picture2} className="w-full" />
 
                     <div className="absolute h-full flex items-center justify-between   bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
-                        <div className='lg:space-y-7 lg:w-1/3 p-1'>
+                        <div className='lg:space-y-7 lg:w-1/3 p-1 pl-12'>
                             <h3 className='lg:text-3xl text-pink-700 font-bold lg:m-1 lg:p-1'>
                             Unlock the Power of Learning!
                             </h3>
