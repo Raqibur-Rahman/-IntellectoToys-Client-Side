@@ -5,6 +5,7 @@ const Navbar = () => {
     <li>
         <Link to='/'>Home</Link>
         <Link to='/about'>About</Link>
+        <Link to='/blogs'>Blogs</Link>
         {/* <Link>Home</Link>
         <Link>Home</Link> */}
     </li>
@@ -41,6 +42,7 @@ const Navbar = () => {
                 <div className="navbar-end">
                     <a className="btn">Get started</a>
                 </div>
+                
 
 
                 {/* <div className="dropdown dropdown-end ">

@@ -7,20 +7,18 @@ const Banner = () => {
         <div className="banner-container">
             <div className="carousel w-full">
                 <div id="slide1" className="carousel-item relative w-full">
-                    <img src={picture1} className="w-full" />
-                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2 items-center text-center">
-                        <div>
-                            <h3 className='text-1xl lg:text-5xl text-pink-700 font-bold m-1'>
-                                Ignite Curiosity. Fuel Learning.
+                    <img src={picture1} className="w-full rounded-lg" />
+                    <div className="absolute h-full flex items-center justify-between   bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
+                        <div className='lg:space-y-7 lg:w-1/3 p-1'>
+                            <h3 className='lg:text-3xl text-pink-700 font-bold lg:m-1 lg:p-1'>
+                                Ignite Curiosity, Fuel Learning.
                             </h3>
-                            <p className='lg:text-3xl text-white font-semibold m-1'>
-                                Educational Play for Young Minds!
+                            <p className='lg:text-xl text-blue-300  lg:m-1 lg:p-1 '>
+                                Educational Play for Young Minds! <br />
+                                <small className=''> Welcome to intellectoToys, where learning becomes an adventure! Explore our wide range of educational toys, designed to unlock young minds and inspire curiosity.</small>
                             </p>
-                            <p className='lg:text-3xl text-fuchsia-950  m-1'>
-                                Welcome to intellectoToys, where learning becomes an adventure! Explore our wide range of educational toys, designed to unlock young minds and inspire curiosity.
-                            </p>
-                            <p>Limited Time Offer: Get 20% Off All Science Kits!</p>
-                            <button className="btn btn-outline btn-success font-bold">Explore Now</button>
+                            <p className='text-pink-300 lg:font-semibold'>Limited Time Offer: Get 20% Off All Science Kits!</p>
+                            <button className="btn  btn-success lg:font-bold">Explore Now</button>
                         </div>
                     </div>
                     <div className="absolute flex justify-center transform -translate-y-1/2 left-5 right-5 bottom-0">
@@ -31,19 +29,17 @@ const Banner = () => {
                 <div id="slide2" className="carousel-item relative w-full">
                     <img src={picture2} className="w-full" />
 
-                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2 items-center text-center">
-                        <div>
-                            <h3 className='text-1xl lg:text-5xl text-pink-700 font-bold m-1'>
-                                Building Tomorrow's Innovators!
+                    <div className="absolute h-full flex items-center justify-between   bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
+                        <div className='lg:space-y-7 lg:w-1/3 p-1'>
+                            <h3 className='lg:text-3xl text-pink-700 font-bold lg:m-1 lg:p-1'>
+                            Unlock the Power of Learning!
                             </h3>
-                            <p className='lg:text-3xl text-white font-semibold m-1'>
-                                Inspire, Create, Engineer!
+                            <p className='lg:text-xl text-blue-300  lg:m-1 lg:p-1 '>
+                            Discover the Joy of Educational Play! <br />
+                                <small className=''> We believe in the power of play to ignite curiosity and empower young minds. Discover our carefully selected educational toys that foster critical thinking, problem-solving skills, and a love for learning.</small>
                             </p>
-                            <p className='lg:text-3xl text-fuchsia-950  m-1'>
-                                Join intellectoToys in building tomorrow's innovators! Our engineering kits and tools inspire creativity and critical thinking. From intricate models to real-world principles, hands-on learning is made exciting.
-                            </p>
-                            <p>Math Mania Sale: Buy One, Get One 50% Off!</p>
-                            <button className="btn btn-outline btn-success font-bold">Explore Now</button>
+                            <p className='text-pink-300 lg:font-semibold'>Math Mania Sale: Buy One, Get One 50% Off!</p>
+                            <button className="btn  btn-success lg:font-bold">Explore Now</button>
                         </div>
                     </div>
 
@@ -55,19 +51,17 @@ const Banner = () => {
                 <div id="slide3" className="carousel-item relative w-full">
                     <img src={picture3} className="w-full" />
 
-                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2 items-center text-center">
-                        <div>
-                            <h3 className='text-1xl lg:text-5xl text-pink-700 font-bold m-1'>
-                                Unlock the Power of Learning!
+                    <div className="absolute h-full flex items-center justify-between   bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
+                        <div className='lg:space-y-7 lg:w-1/3 p-1 pl-12'>
+                            <h3 className='lg:text-3xl text-pink-700 font-bold lg:m-1 lg:p-1'>
+                            Build the Innovators of Tomorrow!
                             </h3>
-                            <p className='lg:text-3xl text-white font-semibold m-1'>
-                                Discover the Joy of Educational Play!
+                            <p className='lg:text-xl text-blue-300  lg:m-1 lg:p-1 '>
+                            Inspire, Create, Engineer! <br />
+                                <small className=''> Our engineering kits and tools are designed to inspire creativity, critical thinking, and a passion for innovation. From building intricate models to experimenting with real engineering principles, our toys encourage hands-on learning. </small>
                             </p>
-                            <p className='lg:text-3xl text-fuchsia-950  m-1'>
-                                We believe in the power of play to ignite curiosity and empower young minds. Discover our carefully selected educational toys that foster critical thinking, problem-solving skills, and a love for learning.
-                            </p>
-                            <p>Engineer's Delight: Free Tool Set with Engineering Kits!</p>
-                            <button className="btn btn-outline btn-success font-bold">Success</button>
+                            <p className='text-pink-300 lg:font-semibold'>Free Tool Set with Engineering Kits!</p>
+                            <button className="btn  btn-success lg:font-bold">Explore Now</button>
                         </div>
                     </div>
                     <div className="absolute flex justify-center transform -translate-y-1/2 left-5 right-5 bottom-0">
