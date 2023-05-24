@@ -3,7 +3,7 @@
 const AboutUs = () => {
   return (
     <div className="container mx-auto p-5">
-      <h1 className="text-3xl font-bold mb-4">About Us</h1>
+      <h1 className="text-3xl font-bold mb-4 text-center">About Us</h1>
       <div className="flex flex-col md:flex-row">
         <div className="md:w-1/2">
           <img src='https://img.freepik.com/premium-photo/education-concept-books-science-equipment_488220-5377.jpg?w=740'alt="About Us" className="rounded-lg mb-4 md:mb-0" />
