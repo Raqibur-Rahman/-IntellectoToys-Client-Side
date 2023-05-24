@@ -1,9 +1,11 @@
 
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, Navigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const SignUp = () => {
+
+    const [error, setError] = useState('');
 
     const { createUser } = useContext(AuthContext);
 
@@ -22,7 +24,9 @@ const SignUp = () => {
                 Navigate('/');
             })
             .catch(error => {
-                console.log(error)
+                console.log(error);
+                setError(error.message);
+
             })
     }
 
@@ -64,12 +68,11 @@ const SignUp = () => {
                                     <div className="form-control mt-6">
                                         <input className="btn btn-primary" type="submit" value="Sign Up" />
                                     </div>
-
-
                                 </form>
                                 <p className="my-5 text-center">Already have an account?
                                     <Link className="text-orange-700 font-bold" to='/login'> Sign in</Link>
                                 </p>
+                                <p className="text-red-950 bg-orange-300 font-bold text-xl p-1 rounded">Error Message : <span className="text-red-700 font-bold ">{error}</span></p>
                             </div>
                         </div>
                     </div>

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/images/logo.png'
+// import { AuthContext } from '../../../providers/AuthProvider';
 const Navbar = () => {
     const navItems = <>
     <li>
@@ -10,6 +11,7 @@ const Navbar = () => {
         <Link>Home</Link> */}
     </li>
     </>
+    
     return (
         <div>
             <div className="navbar bg-base-100 lg:h-24">
