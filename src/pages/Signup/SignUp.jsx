@@ -1,11 +1,16 @@
 
 import { useContext, useState } from "react";
-import { Link, Navigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 
 const SignUp = () => {
 
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+
     const [error, setError] = useState('');
+    const [success, setSuccess] = useState('');
 
     const { createUser } = useContext(AuthContext);
 
@@ -21,7 +26,9 @@ const SignUp = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                Navigate('/');
+                setSuccess("User has been created ")
+                navigate(from, { replace: true });
+                navigate('/login');
             })
             .catch(error => {
                 console.log(error);
@@ -72,7 +79,17 @@ const SignUp = () => {
                                 <p className="my-5 text-center">Already have an account?
                                     <Link className="text-orange-700 font-bold" to='/login'> Sign in</Link>
                                 </p>
-                                <p className="text-red-950 bg-orange-300 font-bold text-xl p-1 rounded">Error Message : <span className="text-red-700 font-bold ">{error}</span></p>
+                                {error && (
+                                    <p className="text-red-950 bg-orange-300 font-bold text-xl p-1 rounded">
+                                        Error Message:{" "}
+                                        <span className="text-red-700 font-bold">{error}</span>
+                                    </p>
+                                )}
+                                {success && (
+                                    <p className="text-green-950 bg-green-300 font-bold text-xl p-1 rounded">
+                                        {success}
+                                    </p>
+                                )}
                             </div>
                         </div>
                     </div>

@@ -1,8 +1,26 @@
 import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
+import app from "../../firebase/firebase.config";
 
 const Login = () => {
+
+    const auth=getAuth(app);
+    const provider = new GoogleAuthProvider();
+
+    const handleGoogleSignIn = () => {
+        signInWithPopup(auth,provider)
+        .then(result=>{
+            const user = result.user;
+            console.log(user);
+            navigate(from, { replace: true });
+        })
+        .catch(error=>{
+            console.log('error :',error.message)
+        })
+    }
+
     const { signIn } = useContext(AuthContext);
     const [error, setError] = useState("");
 
@@ -83,6 +101,7 @@ const Login = () => {
                                     />
                                 </div>
                             </form>
+                            <button onClick={handleGoogleSignIn} className="btn btn-block">Sign in with Google</button>
                             <p className="my-5 text-center">
                                 New to IntellectoToys?
                                 <Link className="text-orange-700 font-bold" to="/signup">
