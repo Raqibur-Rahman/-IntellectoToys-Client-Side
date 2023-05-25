@@ -19,8 +19,11 @@ const Navbar = () => {
         <li>
             <Link to="/">Home</Link>
             <Link to="/about">About</Link>
+            <Link to="/alltoys">All Toys</Link>
+            <Link to="/mytoys">My Toys</Link>
+            <Link to="/addtoy">Add A Toy</Link>
             <Link to="/blogs">Blogs</Link>
-        </li>
+        </li> 
     );
 
     const auth = getAuth(app);
