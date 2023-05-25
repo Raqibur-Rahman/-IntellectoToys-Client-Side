@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 import logo from '../../../assets/images/logo.png';
 import { useContext, useState } from 'react';
 import { AuthContext } from '../../../providers/AuthProvider';
+import { getAuth, signOut } from 'firebase/auth';
+import app from '../../../firebase/firebase.config';
 
 const Navbar = () => {
     const { user } = useContext(AuthContext);
@@ -11,7 +13,7 @@ const Navbar = () => {
         setIsHovered(!isHovered);
     };
 
-    console.log('Navbar ', user);
+    // console.log('Navbar ', user);
 
     const navItems = (
         <li>
@@ -20,6 +22,17 @@ const Navbar = () => {
             <Link to="/blogs">Blogs</Link>
         </li>
     );
+
+    const auth = getAuth(app);
+    // const provider = new GoogleAuthProvider();
+
+    const handleSignOut = () => {
+        signOut(auth)
+            .then()
+            .catch(error => {
+                console.log(error);
+            })
+    }
 
     return (
         <div>
@@ -85,9 +98,11 @@ const Navbar = () => {
 
                                 </label>
                             ) : null}
-                            <Link to="/login" className='m-5'>
+
+                            <button onClick={handleSignOut}>
                                 <span className="btn">Logout</span>
-                            </Link>
+                            </button>
+
                         </>
                     ) : (
                         <Link to="/login">
