@@ -6,6 +6,8 @@ import app from "../../firebase/firebase.config";
 
 const Login = () => {
 
+    // const [user, setUser] = useState(null);
+
     const auth=getAuth(app);
     const provider = new GoogleAuthProvider();
 
@@ -36,8 +38,9 @@ const Login = () => {
 
         signIn(email, password)
             .then((result) => {
-                const user = result.user;
-                console.log(user);
+                const LoggedInUser = result.user;
+                console.log(LoggedInUser);
+                // setUser(LoggedInUser);
                 navigate(from, { replace: true });
             })
             .catch((error) => {
