@@ -4,8 +4,11 @@ import { Navigate } from "react-router-dom";
 
 const PrivateRoutes = ({children}) => {
 
-    const {user} = useContext(AuthContext);
+    const {user,loading} = useContext(AuthContext);
 
+    if(loading){
+        return <h3 className="text-center">Reloading</h3>
+    }
    if(user){
     return children;
    }

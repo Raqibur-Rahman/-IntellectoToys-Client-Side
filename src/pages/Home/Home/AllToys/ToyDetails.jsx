@@ -43,6 +43,7 @@ const ToyDetails = () => {
         {selectedToy.quantity && <p className="p-1"><span className="font-bold">Available Quantity:</span> {selectedToy.quantity}</p>}
         {selectedToy.rating && <p className="p-1"><span className="font-bold">Rating:</span> {selectedToy.rating}</p>}
         {selectedToy.brand && <p className="p-1"><span className="font-bold">Brand:</span> {selectedToy.brand}</p>}
+        {selectedToy.Seller && <p className="p-1"><span className="font-bold">Seller:</span> {selectedToy.Seller}</p>}
         {selectedToy.description && <p className="p-1"><span className="font-bold">Description:</span> {selectedToy.description}</p>}
         {selectedToy.category && <p className="p-1"><span className="font-bold">Category:</span> {selectedToy.category}</p>}
         {selectedToy.summary && <p className="p-1"><span className="font-bold">Summary:</span> {selectedToy.summary}</p>}
