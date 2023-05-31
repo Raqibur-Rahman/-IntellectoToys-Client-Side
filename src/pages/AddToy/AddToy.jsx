@@ -33,7 +33,21 @@ const AddToy = () => {
             seller_email,
             picture
         }
+
+    
         console.log(toyDetails);
+
+        fetch('http://localhost:5000/addtoy',{
+            method:'POST',
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(toyDetails)
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            console.log('serverside ',data);
+        })
     }
    
 
