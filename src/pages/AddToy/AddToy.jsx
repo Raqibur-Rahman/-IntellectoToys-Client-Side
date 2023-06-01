@@ -1,8 +1,17 @@
 import { useContext } from 'react';
 import './AddToy.css';
 import { AuthContext } from '../../providers/AuthProvider';
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+import { useLocation, useNavigate } from 'react-router-dom';
+
 const AddToy = () => {
 
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+
+    const MySwal = withReactContent(Swal)
     const { user } = useContext(AuthContext);
 
     const handleToyUpload = (event) => {
@@ -20,8 +29,8 @@ const AddToy = () => {
         const seller_email = form.sellerEmail.value;
         const picture = form.picture.value;
 
-        const toyDetails={
-            name:name,
+        const toyDetails = {
+            name: name,
             price,
             rating,
             brand,
@@ -34,22 +43,33 @@ const AddToy = () => {
             picture
         }
 
-    
+
         console.log(toyDetails);
 
-        fetch('http://localhost:5000/addtoy',{
-            method:'POST',
-            headers:{
-                'content-type':'application/json'
+        fetch('http://localhost:5000/addtoy', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
             },
-            body:JSON.stringify(toyDetails)
+            body: JSON.stringify(toyDetails)
         })
-        .then(res=>res.json())
-        .then(data=>{
-            console.log('serverside ',data);
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log('serverside ', data);
+                if (data.insertedId) {
+                    MySwal.fire({
+                        position: 'middle',
+                        icon: 'success',
+                        title: 'Your work has been saved',
+                        showConfirmButton: false,
+                        timer: 1500
+                      })
+                }
+                navigate(from, { replace: true });
+
+            })
     }
-   
+
 
     return (
         <div className="">

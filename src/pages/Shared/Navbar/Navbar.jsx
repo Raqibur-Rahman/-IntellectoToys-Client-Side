@@ -20,10 +20,17 @@ const Navbar = () => {
             <Link to="/">Home</Link>
             <Link to="/about">About</Link>
             <Link to="/alltoys">All Toys</Link>
-            <Link to="/mytoys">My Toys</Link>
             <Link to="/addtoy">Add A Toy</Link>
             <Link to="/blogs">Blogs</Link>
-        </li> 
+            {
+                user ?
+                    <div>
+                        <Link to="/mytoys">My Toys</Link>
+                    </div>
+                    :
+                    <></>
+            }
+        </li>
     );
 
     const auth = getAuth(app);
@@ -79,34 +86,40 @@ const Navbar = () => {
                     <ul className="menu menu-horizontal px-1">{navItems}</ul>
                 </div>
 
-                <div className="navbar-end">
+                <div className="navbar-end ">
                     {user ? (
-                        <>
-                            {user.photoURL ? (
-                                <label
-                                    tabIndex={0}
-                                    className="btn btn-ghost btn-circle avatar"
-                                    onMouseEnter={handleHover}
-                                    onMouseLeave={handleHover}
-                                >
-                                    <div className="w-10 rounded-full">
-                                        <img src={user.photoURL} alt="" />
-                                    </div>
-                                    {isHovered && <span className="username">{user.displayName ?
-                                        user.displayName
-                                        :
-                                        <></>
+                        <div className="flex items-center justify-between">
+                            <div className="flex items-center">
+                                {user.photoURL ? (
+                                    <label
+                                        tabIndex={0}
+                                        className="btn btn-ghost btn-circle avatar"
+                                        onMouseEnter={handleHover}
+                                        onMouseLeave={handleHover}
+                                    >
+                                        <div className="w-10 rounded-full">
+                                            <img src={user.photoURL} alt="" />
+                                        </div>
+                                        {isHovered && (
+                                            <span className="username">
+                                                {user.displayName ? user.displayName : <></>}
+                                            </span>
+                                        )}
+                                    </label>
 
-                                    }</span>}
 
-                                </label>
-                            ) : null}
+                                )
 
-                            <button onClick={handleSignOut}>
-                                <span className="btn">Logout</span>
-                            </button>
+                                    :
+                                    null
 
-                        </>
+                                }
+                                <button onClick={handleSignOut} className="btn">
+                                    Logout
+                                </button>
+                            </div>
+                        </div>
+
                     ) : (
                         <Link to="/login">
                             <span className="btn">Login</span>
