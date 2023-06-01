@@ -24,17 +24,13 @@ const MyToy = () => {
                     <table className="table">
 
                         <thead>
-                            <tr>
-                                <th>
-                                    <label>
-                                        <input type="checkbox" className="checkbox" />
-                                    </label>
-                                </th>
+                            <tr className="text-center">
+                               
                                 <th>Name</th>
-                                <th>Job</th>
-                                <th>Favorite Color</th>
-                                <th>Favorite Color</th>
-                                <th>Favorite Color</th>
+                                <th>Price</th>
+                                <th>Available Quantity </th>
+                                <th>Detail description</th>
+                                <th>Actions</th>
                                 <th>Favorite Color</th>
                                 <th></th>
 
