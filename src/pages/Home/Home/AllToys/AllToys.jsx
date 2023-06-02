@@ -12,7 +12,12 @@ const AllToys = () => {
       .then((data) => setToys(data));
   }, []);
 
-  const categories = ["All", "Science Experiment Kits", "Measurement and Observation Kits", "DIY Science Project"];
+  const categories = [
+    "All",
+    "Science Experiment Kits",
+    "Measurement and Observation Kits",
+    "DIY Science Project"
+  ];
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
