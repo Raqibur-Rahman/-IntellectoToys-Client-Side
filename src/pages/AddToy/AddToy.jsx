@@ -46,7 +46,7 @@ const AddToy = () => {
 
         console.log(toyDetails);
 
-        fetch('http://localhost:5000/addtoy', {
+        fetch('https://intellecto-toys-server.vercel.app/addtoy', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

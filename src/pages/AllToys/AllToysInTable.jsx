@@ -5,7 +5,7 @@ const AllToysInTable = () => {
     const [toys, setToys] = useState([]);
     const [searchQuery, setSearchQuery] = useState("");
 
-    const url = `http://localhost:5000/toys`;
+    const url = `https://intellecto-toys-server.vercel.app/toys`;
 
     useEffect(() => {
         fetch(url)

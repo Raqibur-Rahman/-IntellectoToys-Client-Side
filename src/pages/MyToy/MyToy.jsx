@@ -8,7 +8,7 @@ const MyToy = () => {
     const { user } = useContext(AuthContext);
     const [myToys, setMyToys] = useState([]);
 
-    const url = `http://localhost:5000/myToys?seller_email=${user?.email}`;
+    const url = `https://intellecto-toys-server.vercel.app/myToys?seller_email=${user?.email}`;
 
     useEffect(() => {
         fetch(url)
@@ -19,7 +19,7 @@ const MyToy = () => {
     const handleDelete = (id) => {
         const proceed = confirm("Are you sure you want to delete the item?");
         if (proceed) {
-            fetch(`http://localhost:5000/toys/${id}`, {
+            fetch(`https://intellecto-toys-server.vercel.app/toys/${id}`, {
                 method: "DELETE"
             })
                 .then(res => res.json())
@@ -46,7 +46,7 @@ const MyToy = () => {
             description: updatedDescription,
         };
 
-        fetch(`http://localhost:5000/toys/${id}`, {
+        fetch(`https://intellecto-toys-server.vercel.app/toys/${id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
@@ -81,9 +81,9 @@ const MyToy = () => {
     return (
         <div>
             <h3 className="text-3xl font-bold text-center">Your Toy</h3>
-            <h3 className="text-xl font-semibold">Number of Your Toy : {myToys.length}</h3>
+            <h3 className="text-xl font-semibold text-center">Number of Your Toy : {myToys.length}</h3>
 
-            <div>
+            <div className="flex justify-center items-center p-1">
                 <div className="overflow-x-auto">
                     <table className="table">
                         <thead>

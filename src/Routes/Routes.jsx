@@ -45,7 +45,7 @@ const router = createBrowserRouter([
       {
         path: '/toys/:id',
         element: <PrivateRoutes><ToyDetails ></ToyDetails></PrivateRoutes>,
-        loader: ({ params }) => fetch(`http://localhost:5000/toys/${params.id}`)
+        loader: ({ params }) => fetch(`https://intellecto-toys-server.vercel.app/toys/${params.id}`)
       }
       ,
       {
